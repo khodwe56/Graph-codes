@@ -25,9 +25,17 @@ public:
         }
     }
 
-    void dfs(T src){
+
+    void dfs_connected(){
+        int cnt = 0;
         map<T,int> visited;
-        dfs_util(src,visited);
+        for(auto node_pair : l){
+            if(visited[node_pair.first] == 0) {
+                dfs_util(node_pair.first, visited);
+                cnt++;
+            }
+        }
+        cout<<cnt<<endl;
     }
 };
 
@@ -38,6 +46,7 @@ int main(){
     g.addEdge(1,2);
     g.addEdge(5,6);
     g.addEdge(3,6);
-    g.dfs(3);
+    g.addEdge(10,11);
+    g.dfs_connected();
     return 0;
 }
