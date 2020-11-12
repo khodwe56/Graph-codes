@@ -53,7 +53,7 @@ void dfs(int i,vector<int>&vis,int parity = 0){
         dfs(nbr,vis,1-parity);
     }
 }
-int32_t get_ans(){
+int get_ans(){
     int ans = 1;
     vector<int>vis(n+1,0);
     for(int i = 1;i <= n;i++){
@@ -70,7 +70,7 @@ int32_t get_ans(){
     return ans;
 }
 
-int main(){
+int32_t main(){
     int t;cin >> t;
     while (t--){
         adj.clear();
